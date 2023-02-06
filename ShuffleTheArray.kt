@@ -25,4 +25,18 @@ class Solution {
         
         return resultArray
     }
+    
+    // Improved solution:
+    fun shuffle(nums: IntArray, n: Int): IntArray {
+        var result = intArrayOf()
+
+        nums.forEachIndexed { index, num ->
+            if (index < n) {
+                result += num
+                result += nums.get(n + index)
+            } 
+        }
+
+        return result
+    }
 }
